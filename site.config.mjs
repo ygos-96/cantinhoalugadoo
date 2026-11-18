@@ -6,7 +6,7 @@ export default {
 
   // URL final do site (usada em canonical, sitemap e og:image).
   // Troque quando o domínio definitivo existir (ou defina SITE_URL no ambiente de build).
-  siteUrl: process.env.SITE_URL || 'https://cantinhoalugadoo.vercel.app',
+  siteUrl: process.env.SITE_URL || 'https://cantinhoalugadoo.ygs-contato.workers.dev',
 
   // Contato e redes. Deixe vazio para não exibir.
   contactEmail: '',
