@@ -7,7 +7,7 @@
 export const products = [
   {
     id: 1, area: 'cozinha', nome: 'Kit 5 potes de vidro herméticos com tampa de bambu',
-    link: 'https://meli.la/2VwpaFx', img: 'https://http2.mlstatic.com/D_Q_NP_965015-MLA112697664618_062026-R.webp',
+    link: 'https://meli.la/2VwpaFx', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_965015-MLA112697664618_062026-F.webp',
     preco: 49.90, precoAntigo: null,
     vendedor: 'SAYONARA (loja oficial)', reputacao: 'MercadoLíder Gold', nota: '4,7', opinioes: '2.010 opiniões', vendidos: '+5 mil vendidos', frete: 'Frete grátis / Full',
     por: 'Cinco potes iguais com tampa, para guardar grãos, café, massas e cereais (usos citados no anúncio) e tirar da prateleira as embalagens abertas.',
@@ -15,7 +15,7 @@ export const products = [
   },
   {
     id: 2, area: 'cozinha', nome: 'Porta-temperos com 9 potes de vidro e base giratória',
-    link: 'https://meli.la/2cGDjim', img: 'https://http2.mlstatic.com/D_Q_NP_710892-MLA113686748984_072026-R.webp',
+    link: 'https://meli.la/2cGDjim', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_710892-MLA113686748984_072026-F.webp',
     preco: 36.96, precoAntigo: 49.90,
     vendedor: 'SóLar Variedades Utensílios (loja oficial)', reputacao: 'MercadoLíder Platinum', nota: '4,9', opinioes: '12.799 opiniões', vendidos: '+10 mil vendidos', frete: 'Frete grátis / Full',
     por: 'Nove potes numa base giratória: os temperos ficam num único ponto da bancada ou do armário, em vez de espalhados.',
@@ -23,7 +23,7 @@ export const products = [
   },
   {
     id: 3, area: 'cozinha', nome: 'Organizador porta-talheres de gaveta, extensor duplo',
-    link: 'https://meli.la/1oLZYxK', img: 'https://http2.mlstatic.com/D_Q_NP_899533-MLB93068310620_092025-R-organizador-porta-talheres-gaveta-cozinha-extensor-duplo.webp',
+    link: 'https://meli.la/1oLZYxK', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_899533-MLB93068310620_092025-F-organizador-porta-talheres-gaveta-cozinha-extensor-duplo.webp',
     preco: 52.90, precoAntigo: 78.90,
     vendedor: 'Audiophile (loja oficial)', reputacao: 'MercadoLíder Platinum', nota: '4,9', opinioes: '1.821 opiniões', vendidos: '+10 mil vendidos', frete: 'Frete grátis / Full',
     por: 'Bandeja de gaveta com extensor, para separar talheres e se ajustar a gavetas de larguras diferentes.',
@@ -31,7 +31,7 @@ export const products = [
   },
   {
     id: 4, area: 'cozinha', nome: 'Kit 4 organizadores de geladeira de 2 L, acrílico',
-    link: 'https://meli.la/1idFSjj', img: 'https://http2.mlstatic.com/D_Q_NP_922235-MLA110129600853_042026-R.webp',
+    link: 'https://meli.la/1idFSjj', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_922235-MLA110129600853_042026-F.webp',
     preco: 67.06, precoAntigo: 99.70,
     vendedor: 'Mamãe eu Quero', reputacao: 'MercadoLíder', nota: '4,9', opinioes: '5.438 opiniões', vendidos: '+10 mil vendidos', frete: 'Frete grátis / Full',
     por: 'Quatro caixas de acrílico de 2 litros para agrupar frutas e verduras (uso citado no anúncio) e deixar a geladeira menos bagunçada.',
@@ -39,7 +39,7 @@ export const products = [
   },
   {
     id: 5, area: 'cozinha', nome: 'Prateleira de tensão ajustável para armário, 80 cm (sem furar)',
-    link: 'https://meli.la/2To7zL8', img: 'https://http2.mlstatic.com/D_Q_NP_737804-MLB111385618386_052026-R-prateleira-de-tensao-ajustavel-para-organizar-armario-80cm.webp',
+    link: 'https://meli.la/2To7zL8', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_737804-MLB111385618386_052026-F-prateleira-de-tensao-ajustavel-para-organizar-armario-80cm.webp',
     preco: 60.00, precoAntigo: 109.00,
     vendedor: 'LAROVIAMIX', reputacao: 'MercadoLíder', nota: '4,7', opinioes: '57 opiniões', vendidos: '+500 vendidos', frete: 'Frete grátis / Full',
     por: 'Cria um segundo andar dentro do armário sem parafuso: o anúncio indica que ela se prende por tensão.',
@@ -47,7 +47,7 @@ export const products = [
   },
   {
     id: 6, area: 'cozinha', nome: 'Escorredor de louças Trium compacto, cinza',
-    link: 'https://meli.la/2dZTqCf', img: 'https://http2.mlstatic.com/D_Q_NP_623030-MLA100084850287_122025-R.webp',
+    link: 'https://meli.la/2dZTqCf', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_623030-MLA100084850287_122025-F.webp',
     preco: 58.70, precoAntigo: 71.90,
     vendedor: 'LOJADOPRIMO VARIEDADES', reputacao: 'MercadoLíder', nota: '4,8', opinioes: '2.162 opiniões', vendidos: '+1.000 vendidos', frete: 'Frete grátis / Full',
     por: 'Versão compacta de escorredor, pensada para bancada pequena.',
@@ -55,7 +55,7 @@ export const products = [
   },
   {
     id: 7, area: 'cozinha', nome: 'Kit 4 ganchos de inox com adesivo 3M (sem furar)',
-    link: 'https://meli.la/1bU5oor', img: 'https://http2.mlstatic.com/D_Q_NP_782211-MLA108732108230_032026-R.webp',
+    link: 'https://meli.la/1bU5oor', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_782211-MLA108732108230_032026-F.webp',
     preco: 29.98, precoAntigo: 39.80,
     vendedor: 'Mzcell (loja oficial)', reputacao: 'MercadoLíder Platinum', nota: '4,8', opinioes: '804 opiniões', vendidos: '+5 mil vendidos', frete: 'Frete grátis / Full',
     por: 'Ganchos adesivos para pendurar utensílios, toalhas ou chaves sem furar a parede (usos citados no anúncio).',
@@ -63,7 +63,7 @@ export const products = [
   },
   {
     id: 8, area: 'cozinha', nome: 'Lixeira de 2,5 L Trium OU compacta, bege',
-    link: 'https://meli.la/1nCETiE', img: 'https://http2.mlstatic.com/D_Q_NP_641650-MLA99413601858_112025-R.webp',
+    link: 'https://meli.la/1nCETiE', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_641650-MLA99413601858_112025-F.webp',
     preco: 38.17, precoAntigo: 56.99,
     vendedor: 'OU (loja oficial)', reputacao: 'MercadoLíder Platinum', nota: '4,9', opinioes: '108 opiniões', vendidos: '+1.000 vendidos', frete: 'Entrega: veja no anúncio',
     por: 'Lixeira pequena de bancada, de 2,5 litros, para o resíduo do preparo dos alimentos.',
@@ -71,7 +71,7 @@ export const products = [
   },
   {
     id: 9, area: 'cozinha', nome: 'Dispenser de detergente 3 em 1 com porta-esponja, inox',
-    link: 'https://meli.la/1ASGutv', img: 'https://http2.mlstatic.com/D_Q_NP_976584-MLA117700205303_092026-R.webp',
+    link: 'https://meli.la/1ASGutv', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_976584-MLA117700205303_092026-F.webp',
     preco: 35.76, precoAntigo: 69.90,
     vendedor: 'SóLar Variedades Utensílios (loja oficial)', reputacao: 'MercadoLíder Platinum', nota: '4,8', opinioes: '2.093 opiniões', vendidos: '+10 mil vendidos', frete: 'Frete grátis / Full',
     por: 'Junta dispenser de detergente e porta-esponja num item só, na pia.',
@@ -79,7 +79,7 @@ export const products = [
   },
   {
     id: 10, area: 'cozinha', nome: 'Organizador de tampas Arthi, aço cromado',
-    link: 'https://meli.la/2JLGovg', img: 'https://http2.mlstatic.com/D_Q_NP_707172-MLA95203328508_102025-R.webp',
+    link: 'https://meli.la/2JLGovg', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_707172-MLA95203328508_102025-F.webp',
     preco: 32.29, precoAntigo: 45.90,
     vendedor: 'Arthi (loja oficial)', reputacao: 'MercadoLíder Platinum', nota: '4,9', opinioes: '1.731 opiniões', vendidos: '+10 mil vendidos', frete: 'Frete grátis / Full',
     por: 'Suporte para guardar tampas de panela em pé, em vez de empilhadas e escorregando.',

@@ -22,7 +22,8 @@ export const icon = {
   clock: (c) => svg('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>', c),
 };
 
-export const logoMark = (c = 'h-7 w-7') => `<svg class="${c}" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1F3324"/><path d="M8 15.2 16 8.5l8 6.7V24a1 1 0 0 1-1 1h-4.5v-5.5h-5V25H9a1 1 0 0 1-1-1z" fill="#EEF2E8"/></svg>`;
+export const logoMark = (c = 'h-9 w-9') => `<img src="/logo-mark.png" alt="" width="96" height="96" class="${c} rounded-full">`;
+export const pinterestIcon = (c = 'h-5 w-5') => `<svg class="${c}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 3 5.7 3 9.9c0 2.4 1.3 4.5 3.2 5.3.3.1.5 0 .6-.3l.3-1.1c.1-.3 0-.4-.2-.7-.6-.7-.9-1.5-.9-2.7 0-3.4 2.6-6.4 6.700-6.400 3.600 0 5.600 2.200 5.600 5.100 0 3.800-1.700 7-4.200 7-1.400 0-2.400-1.100-2.100-2.500.4-1.700 1.200-3.500 1.200-4.700 0-1.100-.6-2-1.800-2-1.400 0-2.600 1.500-2.600 3.500 0 1.300.4 2.100.4 2.100l-1.700 7.300c-.4 1.600-.1 3.600 0 3.800 0 .1.200.2.300.1.100-.2 1.600-2 2.100-3.800l.8-3.100c.4.800 1.600 1.500 2.900 1.500 3.800 0 6.400-3.500 6.400-8.100C20.500 5.200 17.500 2 12 2z"/></svg>`;
 
 /* ---------- selos factuais, só com dados da planilha ---------- */
 export function badges(p) {
@@ -42,7 +43,7 @@ export const imgTagFor = (p, cls = '') => `<img src="${esc(p.img)}" alt="${esc(p
 export const buyBtn = (p, cls = '') => `<a class="btn ${cls}" href="${esc(p.link)}" target="_blank" rel="sponsored nofollow noopener">Ver no Mercado Livre ${icon.arrowUpRight('h-4 w-4')}<span class="sr-only"> (abre em nova aba)</span></a>`;
 
 const precoLine = (p) => (cfg.showPrices
-  ? `<p class="text-sm"><strong class="text-base">${brl(p.preco)}</strong>${p.precoAntigo ? ` <span class="text-muted line-through">${brl(p.precoAntigo)}</span>` : ''} <span class="text-xs text-muted">em ${esc(cfg.dataConsultada)}, pode mudar</span></p>`
+  ? `<p class="text-sm"><strong class="text-base">${brl(p.preco)}</strong>${p.precoAntigo ? ` <span class="text-muted line-through">${brl(p.precoAntigo)}</span>` : ''} <span class="block text-xs text-muted">em ${esc(cfg.dataConsultada.slice(0, 5))} · pode variar</span></p>`
   : '');
 
 /* ---------- cards ---------- */

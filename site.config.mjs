@@ -1,18 +1,20 @@
 // Configuração central do site. Mude aqui, rode `npm run build`.
 export default {
-  // NOME PROVISÓRIO: troque quando o nome e o domínio forem definidos.
-  name: 'Casa Sem Obra',
+  name: 'Cantinho Alugado',
   tagline: 'Ideias de organização e decoração para apartamento pequeno ou alugado, sem obra.',
   lang: 'pt-BR',
 
-  // URL final (ex.: 'https://seudominio.com.br'). Pode vir de SITE_URL no ambiente.
-  // Vazio = não gera sitemap.xml nem tags canonical.
-  siteUrl: process.env.SITE_URL || '',
+  // URL final do site (usada em canonical, sitemap e og:image).
+  // Troque quando o domínio definitivo existir (ou defina SITE_URL no ambiente de build).
+  siteUrl: process.env.SITE_URL || 'https://cantinhoalugadoo.vercel.app',
 
-  // Preços: deixe false até ler os termos do programa de afiliados do Mercado Livre
-  // (exibir preço pode ter regra própria). Quando liberar, mude para true.
-  // Os preços e a data da consulta já estão em src/data/products.mjs.
-  showPrices: false,
+  // Contato e redes. Deixe vazio para não exibir.
+  contactEmail: '',
+  pinterestUrl: '',
+
+  // Preço aparece nos cards com a data da consulta e o aviso "pode variar".
+  // ATENÇÃO: confirme nos termos do programa de afiliados do Mercado Livre se exibir preço é permitido.
+  showPrices: true,
 
   // Data em que os dados dos produtos foram conferidos no Mercado Livre.
   dataConsultada: '17/11/2026',

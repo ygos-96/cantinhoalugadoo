@@ -4,7 +4,8 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import cfg from '../site.config.mjs';
 import { areas, guides } from '../src/data/guides.mjs';
-import { home, area, guide, doc } from '../src/templates/pages.mjs';
+import { home, area, guide, doc, topic } from '../src/templates/pages.mjs';
+import { topics } from '../src/data/topics.mjs';
 import { esc, url } from '../src/templates/components.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -17,6 +18,7 @@ const add = (path, html) => pages.push({ path, html });
 add('/', home());
 for (const key of Object.keys(areas)) add(`/${areas[key].slug}/`, area(key));
 for (const g of guides) add(`/guias/${g.slug}/`, guide(g));
+for (const t of topics) add(`/${t.slug}/`, topic(t));
 
 add('/como-funciona/', doc({
   title: 'Como funciona',
@@ -47,11 +49,26 @@ add('/privacidade/', doc({
   title: 'Política de privacidade',
   description: 'O que este site coleta e o que acontece quando você clica em um link do Mercado Livre.',
   path: '/privacidade/',
-  lead: 'Este site não tem cadastro, login nem formulário. Não pedimos dados pessoais.',
+  lead: `Este site não tem cadastro, login nem formulário. Não pedimos dados pessoais.`,
   blocks: [
-    ['Links para o Mercado Livre', ['Ao clicar em um link para o Mercado Livre, você sai deste site. O Mercado Livre e o programa de afiliados têm seus próprios cookies e regras de privacidade, e os links nos identificam como origem da visita para o pagamento da comissão.']],
-    ['Estatísticas de visita', ['Se passarmos a usar ferramenta de estatística de visitas, esta página será atualizada com o nome da ferramenta e o que ela coleta.']],
-    ['Situação deste texto', ['Rascunho. Revise antes de publicar com o domínio definitivo.']],
+    ['O que coletamos', ['Não coletamos nome, e-mail, telefone nem outros dados pessoais. Não usamos cookies próprios nem ferramentas de rastreamento de terceiros neste site.', 'Como em qualquer site, o provedor de hospedagem pode registrar dados técnicos de acesso (como endereço IP, tipo de navegador e página visitada) para segurança e funcionamento do serviço. Esses registros ficam com o provedor.']],
+    ['Links para o Mercado Livre', ['Ao clicar em um botão "Ver no Mercado Livre", você sai deste site e passa a se submeter à política de privacidade e aos cookies do Mercado Livre. Os links de afiliado identificam este site como origem da visita para que a comissão seja contabilizada. Não temos acesso aos seus dados de compra.']],
+    ['Links do Pinterest e de outros sites', ['Se você chegou aqui por um pin do Pinterest, o Pinterest tem sua própria política de privacidade. Links para outros sites também seguem as regras de cada um deles.']],
+    ['Seus direitos (LGPD)', ['Como não coletamos dados pessoais, não há dados seus para acessar, corrigir ou apagar neste site. Se tiver qualquer dúvida sobre esta política, fale com a gente pela <a class="link" href="/sobre/">página Sobre e contato</a>.']],
+    ['Mudanças neste texto', [`Se passarmos a usar ferramenta de estatística de visitas ou qualquer coleta de dados, esta página será atualizada antes. Última revisão: ${esc(cfg.dataConsultada)}.`]],
+  ],
+}));
+
+add('/sobre/', doc({
+  title: 'Sobre e contato',
+  description: `Quem faz o ${cfg.name}, como entrar em contato e onde nos encontrar.`,
+  path: '/sobre/',
+  lead: `${esc(cfg.name)} é um portal de recomendações de organização e decoração para quem mora em apartamento pequeno ou alugado.`,
+  blocks: [
+    ['Por que o site existe', ['Morar de aluguel ou em pouco espaço limita o que dá para fazer: furar parede, trocar piso ou fazer obra costuma estar fora de questão. Reunimos aqui ideias e produtos do Mercado Livre que resolvem problemas reais sem obra, com o que medir e conferir antes de comprar.']],
+    ['Somos uma loja?', ['Não. Não vendemos, não recebemos pedido e não cuidamos de entrega ou troca. A compra é feita no Mercado Livre. Leia a <a class="link" href="/transparencia-afiliados/">página de transparência</a>.']],
+    ['Contato', [cfg.contactEmail ? `Escreva para <a class="link" href="mailto:${esc(cfg.contactEmail)}">${esc(cfg.contactEmail)}</a> para sugerir um produto, avisar sobre um erro ou tirar uma dúvida.` : 'Em breve, um e-mail de contato aparecerá aqui.']],
+    ...(cfg.pinterestUrl ? [['Pinterest', [`Nos encontre no <a class="link" href="${esc(cfg.pinterestUrl)}" target="_blank" rel="noopener">Pinterest</a>.`]]] : []),
   ],
 }));
 

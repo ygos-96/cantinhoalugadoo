@@ -5,17 +5,18 @@ import {
   esc, num, icon, stars, buyBtn, imgTagFor, productCard, productRow, guideCard, cover, readingMinutes, aviso, vendidos, badges,
 } from './components.mjs';
 import { layout } from './layout.mjs';
+import { topics } from '../data/topics.mjs';
 
 const notaNum = (p) => parseFloat(String(p.nota).replace(',', '.'));
 
 /* ============ HOME ============ */
 export function home() {
-  const heroTiles = [byId(15), byId(12), byId(2), byId(18)];
+  const heroTiles = [byId(2), byId(12), byId(10), byId(18)];
   const rail = [...products]
     .filter((p) => num(p.opinioes) >= 1000)
     .sort((a, b) => notaNum(b) - notaNum(a) || num(b.opinioes) - num(a.opinioes))
     .slice(0, 8);
-  const capa = { cozinha: [1, 2, 4], decoracao: [15, 18, 12] };
+  const capa = { cozinha: [1, 2, 4], decoracao: [19, 18, 12] };
   const tile = (p, cls) => `<div class="absolute ${cls} overflow-hidden rounded-3xl border border-line bg-white p-3 shadow-card">${imgTagFor(p, 'h-full w-full object-contain')}</div>`;
 
   const body = `
@@ -59,6 +60,13 @@ export function home() {
         <p class="mt-5 flex items-center justify-between text-sm"><span class="text-muted">${a.produtoIds.length} produtos · ${guides.filter((g) => g.area === k).length} guias</span><span class="inline-flex items-center gap-1.5 font-semibold text-olive-700">Explorar ${icon.arrow('h-4 w-4')}</span></p>
       </div>
     </a>`).join('\n    ')}
+  </div>
+</section>
+
+<section class="wrap pt-24">
+  <div class="reveal max-w-2xl"><p class="eyebrow">Por tema</p><h2 class="mt-3 text-3xl font-semibold sm:text-4xl">Achadinhos, cortinas, tapetes, quadros e paredes</h2></div>
+  <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+    ${topics.map((t, i) => `<a href="/${t.slug}/" class="reveal group rounded-3xl border border-line bg-white p-5 no-underline transition duration-300 hover:-translate-y-1 hover:shadow-card" style="--d:${i * 60}ms"><span class="eyebrow">${t.ids.length} ${t.ids.length > 1 ? 'itens' : 'item'}</span><h3 class="mt-2 text-lg font-semibold leading-snug">${esc(t.titulo)}</h3><span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-olive-700">Ver ${icon.arrow('h-4 w-4')}</span></a>`).join('\n')}
   </div>
 </section>
 
@@ -231,4 +239,35 @@ export function doc({ title, description, path, lead, blocks }) {
   </div>
 </div>`;
   return layout({ title, description, path, body });
+}
+
+/* ============ PÁGINA DE TEMA (curta) ============ */
+export function topic(t) {
+  let n = 0;
+  const rel = (t.guias || []).map(guideBySlug).filter(Boolean);
+  const outros = topics.filter((o) => o.slug !== t.slug);
+  const body = `
+<section class="noise border-b border-line">
+  <div class="wrap py-12 sm:py-16">
+    <nav aria-label="Você está em" class="text-sm text-muted"><a class="no-underline hover:text-ink" href="/">Início</a> <span aria-hidden="true">/</span> ${esc(t.titulo)}</nav>
+    <h1 class="mt-4 max-w-4xl text-[2.1rem] font-semibold leading-[1.08] sm:text-5xl">${esc(t.h1)}</h1>
+    <p class="mt-5 text-sm text-muted">${t.ids.length} ${t.ids.length > 1 ? 'produtos' : 'produto'} · Dados de ${esc(cfg.dataConsultada)}</p>
+  </div>
+</section>
+<div class="wrap py-12">
+  <div class="max-w-3xl">
+    <div class="prose-guide">
+      ${aviso('mb-6')}
+      ${t.intro.map((p) => `<p>${esc(p)}</p>`).join('\n')}
+    </div>
+    <div class="mt-10 space-y-5">${t.ids.map((id) => productRow(byId(id), ++n)).join('\n')}</div>
+    <section class="mt-14">
+      <h2 class="text-2xl font-semibold sm:text-3xl">Antes de comprar</h2>
+      <ul class="mt-5 grid gap-3">${t.dicas.map((c) => `<li class="flex gap-3 rounded-2xl border border-line bg-white p-4 text-[15px] leading-snug"><span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-olive-50 text-olive-700">${icon.check('h-3.5 w-3.5')}</span><span>${esc(c)}</span></li>`).join('')}</ul>
+    </section>
+  </div>
+  ${rel.length ? `<section class="mt-16"><h2 class="text-2xl font-semibold sm:text-3xl">Guias para ler em seguida</h2><div class="mt-6 grid gap-6 sm:grid-cols-2">${rel.map((r, i) => guideCard(r, byId, i)).join('')}</div></section>` : ''}
+  <section class="mt-16"><h2 class="text-xl font-semibold">Outros temas</h2><div class="mt-4 flex flex-wrap gap-2">${outros.map((o) => `<a class="chip no-underline" href="/${o.slug}/">${esc(o.titulo)}</a>`).join('')}</div></section>
+</div>`;
+  return layout({ title: t.h1, description: t.descricao, path: `/${t.slug}/`, body });
 }
