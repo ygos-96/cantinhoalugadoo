@@ -12,7 +12,7 @@ export default {
   contactEmail: 'emailcanais01.2026@gmail.com',
   pinterestUrl: 'https://www.pinterest.com/cantinhoalugadoo/',
   // Código de verificação do domínio no Pinterest (p:domain_verify). Cole aqui quando receber.
-  pinterestVerify: '',
+  pinterestVerify: '13233b2628394578c47d42dc08e974d7',
 
   // Preço aparece nos cards com a data da consulta e o aviso "pode variar".
   // ATENÇÃO: confirme nos termos do programa de afiliados do Mercado Livre se exibir preço é permitido.
