@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://cantinhoalugadoo.ygs-contato.workers.dev/sitemap.xml
+Sitemap: https://cantinhoalugadoo.pages.dev/sitemap.xml
