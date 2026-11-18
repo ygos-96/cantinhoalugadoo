@@ -16,12 +16,12 @@
 @layer components {
   .wrap { @apply mx-auto w-full max-w-page px-5 sm:px-8; }
 
-  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white no-underline transition duration-200 hover:bg-olive-700 active:scale-[.98]; }
-  .btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white px-5 py-3 text-sm font-semibold text-ink no-underline transition duration-200 hover:border-ink/40 hover:bg-linen; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md bg-olive-600 px-5 py-3 text-sm font-semibold text-white no-underline transition duration-200 hover:bg-olive-700 active:scale-[.98]; }
+  .btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-md border border-ink/20 bg-white px-5 py-3 text-sm font-semibold text-ink no-underline transition duration-200 hover:border-ink/40 hover:bg-linen; }
   .btn-sm { @apply px-4 py-2 text-xs; }
 
-  .chip { @apply inline-flex items-center gap-1 rounded-full bg-olive-50 px-2.5 py-1 text-xs font-medium text-olive-700; }
-  .chip-white { @apply inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-ink shadow-soft backdrop-blur; }
+  .chip { @apply inline-flex items-center gap-1 rounded-md bg-olive-50 px-2.5 py-1 text-xs font-medium text-olive-700; }
+  .chip-white { @apply inline-flex items-center rounded bg-ink px-2 py-0.5 text-[11px] font-semibold text-white; }
   .eyebrow { @apply text-xs font-semibold uppercase tracking-[.14em] text-olive-600; }
 
   .link { @apply font-medium text-olive-700 underline decoration-olive-200 decoration-2 underline-offset-4 transition hover:decoration-olive-600; }
@@ -35,7 +35,7 @@
 
   [data-header].is-stuck { @apply border-line shadow-soft; }
 
-  .noise { background-image: radial-gradient(1200px 520px at 85% -10%, rgba(63,95,67,.14), transparent 60%), radial-gradient(900px 420px at -10% 10%, rgba(214,189,140,.20), transparent 60%); }
+  .noise { @apply bg-linen; }
 }
 
 @media (prefers-reduced-motion: reduce) {

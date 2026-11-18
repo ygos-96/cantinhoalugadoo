@@ -1,5 +1,6 @@
 import cfg from '../../site.config.mjs';
 import { areas, guides } from '../data/guides.mjs';
+import { byId } from '../data/products.mjs';
 
 export const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export const brl = (n) => 'R$ ' + n.toFixed(2).replace('.', ',');
@@ -23,7 +24,7 @@ export const icon = {
 };
 
 export const logoMark = (c = 'h-9 w-9') => `<img src="/logo-mark.png" alt="" width="96" height="96" class="${c} rounded-full">`;
-export const pinterestIcon = (c = 'h-5 w-5') => `<svg class="${c}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 3 5.7 3 9.9c0 2.4 1.3 4.5 3.2 5.3.3.1.5 0 .6-.3l.3-1.1c.1-.3 0-.4-.2-.7-.6-.7-.9-1.5-.9-2.7 0-3.4 2.6-6.4 6.700-6.400 3.600 0 5.600 2.200 5.600 5.100 0 3.800-1.700 7-4.200 7-1.400 0-2.400-1.100-2.100-2.500.4-1.700 1.200-3.500 1.200-4.700 0-1.100-.6-2-1.800-2-1.400 0-2.600 1.500-2.600 3.500 0 1.300.4 2.100.4 2.100l-1.700 7.300c-.4 1.600-.1 3.600 0 3.800 0 .1.200.2.300.1.100-.2 1.600-2 2.100-3.800l.8-3.100c.4.800 1.600 1.500 2.900 1.500 3.800 0 6.400-3.500 6.400-8.100C20.500 5.200 17.500 2 12 2z"/></svg>`;
+export const pinterestIcon = (c = 'h-5 w-5') => `<svg class="${c}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>`;
 
 /* ---------- selos factuais, só com dados da planilha ---------- */
 export function badges(p) {
@@ -34,41 +35,42 @@ export function badges(p) {
   if (num(p.opinioes) < 100) out.push('Poucas opiniões');
   return out;
 }
+export const avaliacoes = (p) => p.opinioes.replace('opiniões', 'avaliações');
+export const soldNum = (p) => { const m = String(p.vendidos).match(/([\d.]+)\s*(mil)?/); if (!m) return 0; const n = parseFloat(m[1].replace(/\./g, '')) || 0; return m[2] ? n * 1000 : n; };
+export const selo = (p) => (/sem furar|sem furos/i.test(p.nome) ? 'Sem furar' : soldNum(p) >= 10000 ? 'Mais vendido' : p.preco <= 50 ? 'Até R$ 50' : '');
 export const vendidos = (p) => p.vendidos.replace('vendidos', '').trim();
 
-export const stars = (p, withCount = true) => `<span class="inline-flex items-center gap-1.5 text-sm"><span class="inline-flex items-center gap-1 font-semibold text-ink"><span class="text-[#C9892B]">${icon.star()}</span>${esc(p.nota)}</span>${withCount ? `<span class="text-muted">${esc(p.opinioes)}</span>` : ''}</span>`;
+export const stars = (p, withCount = true, cls = 'text-sm') => `<span class="inline-flex items-center gap-1.5 whitespace-nowrap ${cls}"><span class="inline-flex items-center gap-1 font-semibold text-ink"><span class="text-[#C9892B]">${icon.star()}</span>${esc(p.nota)}</span>${withCount ? `<span class="text-muted">· ${esc(avaliacoes(p))}</span>` : ''}</span>`;
 
-export const imgTagFor = (p, cls = '') => `<img src="${esc(p.img)}" alt="${esc(p.nome)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" class="${cls}">`;
+export const imgTagFor = (p, cls = '', eager = false) => `<img src="${esc(p.img)}" alt="${esc(p.nome)}" width="800" height="800" ${eager ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async" referrerpolicy="no-referrer" class="${cls}">`;
 
-export const buyBtn = (p, cls = '') => `<a class="btn ${cls}" href="${esc(p.link)}" target="_blank" rel="sponsored nofollow noopener">Ver no Mercado Livre ${icon.arrowUpRight('h-4 w-4')}<span class="sr-only"> (abre em nova aba)</span></a>`;
+export const buyBtn = (p, cls = '') => `<a class="btn !px-3 ${cls}" href="${esc(p.link)}" target="_blank" rel="sponsored nofollow noopener">Ver no Mercado Livre ${icon.arrowUpRight('hidden h-4 w-4 sm:block')}<span class="sr-only"> (abre em nova aba)</span></a>`;
 
 const precoLine = (p) => (cfg.showPrices
-  ? `<p class="text-sm"><strong class="text-base">${brl(p.preco)}</strong>${p.precoAntigo ? ` <span class="text-muted line-through">${brl(p.precoAntigo)}</span>` : ''} <span class="block text-xs text-muted">em ${esc(cfg.dataConsultada.slice(0, 5))} · pode variar</span></p>`
+  ? `<p class="leading-tight"><strong class="text-base font-semibold text-ink sm:text-lg">${brl(p.preco)}</strong>${p.precoAntigo ? ` <span class="text-xs text-muted line-through sm:text-sm">${brl(p.precoAntigo)}</span>` : ''}<span class="block text-xs text-muted">em ${esc(cfg.dataConsultada.slice(0, 5))} · pode variar</span></p>`
   : '');
 
 /* ---------- cards ---------- */
 export function productCard(p, grupo = '') {
-  const bs = badges(p).slice(0, 2);
-  return `<article class="group flex flex-col overflow-hidden rounded-3xl border border-line bg-white transition duration-300 hover:-translate-y-1 hover:shadow-card" ${grupo ? `data-grupo="${esc(grupo)}"` : ''}>
-  <div class="relative aspect-[4/3] bg-white">
-    ${imgTagFor(p, 'h-full w-full object-contain p-5 transition duration-500 group-hover:scale-[1.04]')}
-    ${bs.length ? `<div class="absolute left-3 top-3 flex flex-wrap gap-1.5">${bs.map((b) => `<span class="chip-white">${esc(b)}</span>`).join('')}</div>` : ''}
+  const tag = selo(p);
+  return `<article id="p-${p.id}" class="flex flex-col overflow-hidden rounded-lg border border-line bg-white" ${grupo ? `data-grupo="${esc(grupo)}"` : ''}>
+  <div class="relative aspect-square bg-white">
+    ${imgTagFor(p, 'h-full w-full object-contain p-3 sm:p-5')}
+    ${tag ? `<span class="chip-white absolute left-2 top-2">${esc(tag)}</span>` : ''}
   </div>
-  <div class="flex flex-1 flex-col gap-3 border-t border-line p-5">
-    <div class="flex items-center justify-between gap-2">${stars(p)}<span class="text-xs font-medium text-muted">${esc(vendidos(p))}</span></div>
-    <h3 class="text-lg font-semibold leading-snug">${esc(p.nome)}</h3>
-    <p class="line-clamp-3 text-sm leading-relaxed text-ink/75">${esc(p.por)}</p>
-    <div class="rounded-xl bg-sand-50 p-3 text-[13px] leading-snug text-sand-800"><span class="font-semibold">Confira antes:</span> ${esc(p.confira)}</div>
+  <div class="flex flex-1 flex-col gap-2 border-t border-line p-3 sm:p-4">
+    <h3 class="line-clamp-2 min-h-[2.5rem] font-sans text-sm font-semibold leading-snug sm:text-[15px]">${esc(p.nome)}</h3>
+    ${stars(p, true, 'text-xs sm:text-sm')}
     ${precoLine(p)}
-    <div class="mt-auto pt-1">${buyBtn(p, 'w-full')}</div>
+    <div class="mt-auto pt-2">${buyBtn(p, 'w-full')}</div>
   </div>
 </article>`;
 }
 
 export function productRow(p, n) {
   const bs = badges(p);
-  return `<article id="p-${p.id}" class="reveal grid gap-5 rounded-3xl border border-line bg-white p-4 sm:p-6 md:grid-cols-[250px_1fr] md:gap-8">
-  <div class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white md:aspect-square">
+  return `<article id="p-${p.id}" class="reveal grid gap-5 rounded-xl border border-line bg-white p-4 sm:p-6 md:grid-cols-[250px_1fr] md:gap-8">
+  <div class="relative aspect-[4/3] overflow-hidden rounded-lg border border-line bg-white md:aspect-square">
     ${imgTagFor(p, 'h-full w-full object-contain p-4')}
     <span class="absolute left-3 top-3 grid h-8 w-8 place-items-center rounded-full bg-ink text-sm font-semibold text-white">${n}</span>
   </div>
@@ -77,8 +79,8 @@ export function productRow(p, n) {
     <h3 class="mt-2 text-xl font-semibold leading-snug sm:text-2xl">${esc(p.nome)}</h3>
     ${bs.length ? `<div class="mt-3 flex flex-wrap gap-1.5">${bs.map((b) => `<span class="chip">${esc(b)}</span>`).join('')}</div>` : ''}
     <div class="mt-4 grid gap-3">
-      <div class="rounded-2xl bg-olive-50 p-4"><p class="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-olive-700">${icon.check('h-4 w-4')} Por que entrou</p><p class="mt-1.5 text-[15px] leading-relaxed text-ink/85">${esc(p.por)}</p></div>
-      <div class="rounded-2xl bg-sand-50 p-4"><p class="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-sand-800">${icon.alert('h-4 w-4')} Confira antes</p><p class="mt-1.5 text-[15px] leading-relaxed text-sand-800">${esc(p.confira)}</p></div>
+      <div class="rounded-lg bg-olive-50 p-4"><p class="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-olive-700">${icon.check('h-4 w-4')} Por que entrou</p><p class="mt-1.5 text-[15px] leading-relaxed text-ink/85">${esc(p.por)}</p></div>
+      <div class="rounded-lg bg-sand-50 p-4"><p class="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-sand-800">${icon.alert('h-4 w-4')} Confira antes</p><p class="mt-1.5 text-[15px] leading-relaxed text-sand-800">${esc(p.confira)}</p></div>
     </div>
     <div class="mt-5 flex flex-col gap-4 border-t border-line pt-4 sm:flex-row sm:items-center sm:justify-between">
       <p class="text-[13px] leading-snug text-muted">${esc(p.vendedor)} · ${esc(p.reputacao)}<br>${esc(p.frete)}</p>
@@ -88,16 +90,14 @@ export function productRow(p, n) {
 </article>`;
 }
 
-export function guideCard(g, byId, i = 0) {
+export function guideCard(g, byIdFn = byId) {
   const a = areas[g.area];
-  return `<a href="/guias/${g.slug}/" class="reveal group flex flex-col overflow-hidden rounded-3xl border border-line bg-white no-underline transition duration-300 hover:-translate-y-1 hover:shadow-card" style="--d:${i * 70}ms">
-  ${cover(g, byId)}
-  <div class="flex flex-1 flex-col gap-2 p-6">
-    <span class="chip self-start">${esc(a.titulo)}</span>
-    <h3 class="text-xl font-semibold leading-snug">${esc(g.titulo)}</h3>
-    <p class="text-sm leading-relaxed text-muted">${esc(g.descricao)}</p>
-    <span class="mt-auto inline-flex items-center gap-1.5 pt-3 text-sm font-semibold text-olive-700">Ler o guia <span class="transition group-hover:translate-x-1">${icon.arrow('h-4 w-4')}</span></span>
-  </div>
+  const p = byIdFn(g.capa || g.sections[0].ids[0]);
+  return `<a href="/guias/${g.slug}/" class="group flex flex-col no-underline">
+  <div class="aspect-[16/10] overflow-hidden rounded-lg border border-line bg-white">${imgTagFor(p, 'h-full w-full object-contain p-6 transition duration-300 group-hover:scale-[1.03]')}</div>
+  <p class="eyebrow mt-4">${esc(a.titulo)}</p>
+  <h3 class="mt-1.5 text-xl font-semibold leading-snug group-hover:text-olive-700">${esc(g.titulo)}</h3>
+  <p class="mt-1.5 line-clamp-1 text-sm text-muted">${esc(g.descricao)}</p>
 </a>`;
 }
 
@@ -109,6 +109,28 @@ export function cover(g, byId, cls = 'h-44') {
 
 export const readingMinutes = (g) => Math.max(2, Math.round((g.intro.join(' ').length + g.erros.join(' ').length + g.sections.reduce((n, s) => n + s.ids.length * 420, 0)) / 1100));
 
-export const aviso = (cls = '') => `<p class="flex items-start gap-2.5 rounded-2xl border border-olive-200 bg-olive-50 px-4 py-3 text-sm leading-snug text-olive-900 ${cls}">${icon.shield('mt-0.5 h-4 w-4 shrink-0')}<span>Os links desta página são de afiliado: se você comprar, podemos receber uma comissão, sem custo extra. <a class="link" href="/transparencia-afiliados/">Entenda</a>.</span></p>`;
+export const aviso = (cls = '') => `<p class="flex items-start gap-2.5 rounded-lg border border-olive-200 bg-olive-50 px-4 py-3 text-sm leading-snug text-olive-900 ${cls}">${icon.shield('mt-0.5 h-4 w-4 shrink-0')}<span>Os links desta página são de afiliado: se você comprar, podemos receber uma comissão, sem custo extra. <a class="link" href="/transparencia-afiliados/">Entenda</a>.</span></p>`;
 
 export const allGuides = guides;
+
+/* ---------- dados estruturados (JSON-LD) ---------- */
+export const ldScript = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;
+export const itemListLd = (name, ids, path) => ({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name,
+  itemListElement: ids.map((id, i) => { const p = byId(id); return { '@type': 'ListItem', position: i + 1, item: { '@type': 'Product', name: p.nome, image: p.img, url: url(`${path}#p-${p.id}`) } }; }),
+});
+export const articleLd = (g, path) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: g.titulo,
+  description: g.descricao,
+  image: [byId(g.capa || g.sections[0].ids[0]).img],
+  datePublished: '2026-11-17',
+  dateModified: '2026-11-17',
+  inLanguage: 'pt-BR',
+  mainEntityOfPage: url(path),
+  author: { '@type': 'Organization', name: cfg.name },
+  publisher: { '@type': 'Organization', name: cfg.name, logo: { '@type': 'ImageObject', url: url('/logo-mark.png') } },
+});

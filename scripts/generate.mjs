@@ -54,21 +54,33 @@ add('/privacidade/', doc({
     ['O que coletamos', ['Não coletamos nome, e-mail, telefone nem outros dados pessoais. Não usamos cookies próprios nem ferramentas de rastreamento de terceiros neste site.', 'Como em qualquer site, o provedor de hospedagem pode registrar dados técnicos de acesso (como endereço IP, tipo de navegador e página visitada) para segurança e funcionamento do serviço. Esses registros ficam com o provedor.']],
     ['Links para o Mercado Livre', ['Ao clicar em um botão "Ver no Mercado Livre", você sai deste site e passa a se submeter à política de privacidade e aos cookies do Mercado Livre. Os links de afiliado identificam este site como origem da visita para que a comissão seja contabilizada. Não temos acesso aos seus dados de compra.']],
     ['Links do Pinterest e de outros sites', ['Se você chegou aqui por um pin do Pinterest, o Pinterest tem sua própria política de privacidade. Links para outros sites também seguem as regras de cada um deles.']],
-    ['Seus direitos (LGPD)', ['Como não coletamos dados pessoais, não há dados seus para acessar, corrigir ou apagar neste site. Se tiver qualquer dúvida sobre esta política, fale com a gente pela <a class="link" href="/sobre/">página Sobre e contato</a>.']],
+    ['Seus direitos (LGPD)', ['Como não coletamos dados pessoais, não há dados seus para acessar, corrigir ou apagar neste site. Se tiver qualquer dúvida sobre esta política, fale com a gente pela <a class="link" href="/contato/">página de contato</a>.']],
     ['Mudanças neste texto', [`Se passarmos a usar ferramenta de estatística de visitas ou qualquer coleta de dados, esta página será atualizada antes. Última revisão: ${esc(cfg.dataConsultada)}.`]],
   ],
 }));
 
 add('/sobre/', doc({
-  title: 'Sobre e contato',
-  description: `Quem faz o ${cfg.name}, como entrar em contato e onde nos encontrar.`,
+  title: 'Sobre',
+  description: `Quem faz o ${cfg.name}, como escolhemos os produtos e como entrar em contato.`,
   path: '/sobre/',
   lead: `${esc(cfg.name)} é um portal de recomendações de organização e decoração para quem mora em apartamento pequeno ou alugado.`,
   blocks: [
     ['Por que o site existe', ['Morar de aluguel ou em pouco espaço limita o que dá para fazer: furar parede, trocar piso ou fazer obra costuma estar fora de questão. Reunimos aqui ideias e produtos do Mercado Livre que resolvem problemas reais sem obra, com o que medir e conferir antes de comprar.']],
     ['Somos uma loja?', ['Não. Não vendemos, não recebemos pedido e não cuidamos de entrega ou troca. A compra é feita no Mercado Livre. Leia a <a class="link" href="/transparencia-afiliados/">página de transparência</a>.']],
-    ['Contato', [cfg.contactEmail ? `Escreva para <a class="link" href="mailto:${esc(cfg.contactEmail)}">${esc(cfg.contactEmail)}</a> para sugerir um produto, avisar sobre um erro ou tirar uma dúvida.` : 'Em breve, um e-mail de contato aparecerá aqui.']],
+    ['Contato', [`Para sugerir um produto, avisar sobre um erro ou tirar uma dúvida, escreva para <a class="link" href="mailto:${esc(cfg.contactEmail)}">${esc(cfg.contactEmail)}</a> ou veja a <a class="link" href="/contato/">página de contato</a>.`]],
     ...(cfg.pinterestUrl ? [['Pinterest', [`Nos encontre no <a class="link" href="${esc(cfg.pinterestUrl)}" target="_blank" rel="noopener">Pinterest</a>.`]]] : []),
+  ],
+}));
+
+add('/contato/', doc({
+  title: 'Contato',
+  description: `Fale com o ${cfg.name}: sugestões de produtos, correções e dúvidas.`,
+  path: '/contato/',
+  lead: 'Sugestão de produto, erro em algum anúncio ou dúvida? Escreva para a gente.',
+  blocks: [
+    ['E-mail', [`<a class="link" href="mailto:${esc(cfg.contactEmail)}">${esc(cfg.contactEmail)}</a>`, 'Respondo em até 2 dias úteis.']],
+    ['Antes de escrever', ['Não vendemos nada e não temos acesso a pedidos, entrega ou troca: para qualquer assunto de compra, fale com o vendedor ou com o Mercado Livre pelo anúncio.']],
+    ...(cfg.pinterestUrl ? [['Pinterest', [`Também estamos no <a class="link" href="${esc(cfg.pinterestUrl)}" target="_blank" rel="noopener">Pinterest</a>.`]]] : []),
   ],
 }));
 

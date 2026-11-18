@@ -6,7 +6,7 @@ export const areas = {
     slug: 'cozinha-pequena',
     titulo: 'Cozinha pequena',
     descricao: 'Organização de cozinha pequena: itens de bancada, gaveta e armário para liberar espaço sem reforma.',
-    intro: 'Quando a cozinha é pequena, o problema quase nunca é falta de móvel: é falta de lugar fixo para cada coisa. Aqui estão guias e produtos para organizar bancada, gavetas e armários sem obra.',
+    intro: 'Organização de cozinha pequena sem obra: quando a cozinha é pequena, o problema quase nunca é falta de móvel: é falta de lugar fixo para cada coisa. Aqui estão guias e produtos para organizar bancada, gavetas e armários sem obra.',
     produtoIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     grupos: [
       { titulo: 'Bancada e pia', ids: [2, 9, 6, 8] },
@@ -18,7 +18,7 @@ export const areas = {
     slug: 'decoracao-apartamento-alugado',
     titulo: 'Decoração de apartamento alugado',
     descricao: 'Decoração para apartamento alugado: paredes, janelas, tapete e luz que não pedem obra nem furo na parede.',
-    intro: 'Em apartamento alugado, quase tudo que muda o visual precisa ser reversível. Aqui estão guias e produtos que dispensam obra e, na maioria dos casos, furo na parede.',
+    intro: 'Decoração de apartamento alugado sem obra: em apartamento alugado, quase tudo que muda o visual precisa ser reversível. Aqui estão guias e produtos que dispensam obra e, na maioria dos casos, furo na parede.',
     produtoIds: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
     grupos: [
       { titulo: 'Paredes', ids: [15, 16, 17] },
@@ -32,6 +32,7 @@ export const areas = {
 export const guides = [
   {
     slug: 'organizacao-cozinha-pequena-liberar-bancada',
+    capa: 2,
     area: 'cozinha',
     titulo: 'Organização de cozinha pequena: 7 itens que liberam a bancada',
     descricao: 'Sete itens de organização para cozinha pequena que tiram temperos, detergente, escorredor e lixo de cima da bancada.',
@@ -62,6 +63,7 @@ export const guides = [
   },
   {
     slug: 'organizar-armarios-cozinha-pequena-sem-reforma',
+    capa: 5,
     area: 'cozinha',
     titulo: 'Como organizar armários de cozinha pequena sem reforma',
     descricao: 'Seis itens para organizar armários e gavetas de cozinha pequena sem reforma e sem furar nada.',
@@ -90,6 +92,7 @@ export const guides = [
   },
   {
     slug: 'decoracao-apartamento-alugado-sem-furar-parede',
+    capa: 19,
     area: 'decoracao',
     titulo: 'Decoração de apartamento alugado sem furar a parede: 10 ideias',
     descricao: 'Dez ideias de decoração para apartamento alugado que dispensam obra e, na maioria, furo na parede: quadros, cortina, tapete e luz.',
@@ -124,6 +127,7 @@ export const guides = [
   },
   {
     slug: 'iluminacao-apartamento-alugado-luminarias-sem-obra',
+    capa: 11,
     area: 'decoracao',
     titulo: 'Iluminação para apartamento alugado: 4 luminárias que não pedem obra',
     descricao: 'Quatro luminárias para apartamento alugado que funcionam sem instalação: abajur, luminária de chão, barra de LED e varal de luzes.',

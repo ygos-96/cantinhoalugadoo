@@ -87,7 +87,7 @@ export const products = [
   },
   {
     id: 11, area: 'decoracao', nome: 'Abajur luminária de mesa moderno, com lâmpada',
-    link: 'https://meli.la/2A5cbwd', img: 'https://http2.mlstatic.com/D_NQ_NP_733155-MLB120249520249_102026-O-abajur-luminaria-de-mesa-sala-quarto-moderno-com-lampada.webp',
+    link: 'https://meli.la/2A5cbwd', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_733155-MLB120249520249_102026-F-abajur-luminaria-de-mesa-sala-quarto-moderno-com-lampada.webp',
     preco: 52.10, precoAntigo: 59.90,
     vendedor: 'Marx Greg 3D (loja oficial)', reputacao: 'MercadoLíder Gold', nota: '4,6', opinioes: '1.511 opiniões', vendidos: '+50 mil vendidos', frete: 'Full',
     por: 'Luz de mesa que só precisa de tomada. O título informa que a lâmpada acompanha.',
@@ -95,7 +95,7 @@ export const products = [
   },
   {
     id: 12, area: 'decoracao', nome: 'Luminária de chão moderna com cúpula de tecido',
-    link: 'https://meli.la/1N8KjCe', img: 'https://http2.mlstatic.com/D_NQ_NP_878265-MLB118548466473_102026-O-luminaria-de-chao-moderna-com-cupula-de-tecido-quarto-sala.webp',
+    link: 'https://meli.la/1N8KjCe', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_878265-MLB118548466473_102026-F-luminaria-de-chao-moderna-com-cupula-de-tecido-quarto-sala.webp',
     preco: 189.99, precoAntigo: 398.00,
     vendedor: 'Luminária LuzPerfeita', reputacao: 'MercadoLíder', nota: '4,9', opinioes: '50 opiniões', vendidos: '+100 vendidos', frete: 'Full',
     por: 'Luz de ambiente que fica no chão, sem instalação, ao lado do sofá ou da cama.',
@@ -103,7 +103,7 @@ export const products = [
   },
   {
     id: 13, area: 'decoracao', nome: 'Luminária barra de LED com sensor de movimento, recarregável',
-    link: 'https://meli.la/2Yv7ABH', img: 'https://http2.mlstatic.com/D_NQ_NP_690774-MLB103079448137_122025-O-luminaria-barra-led-sensor-movimento-recarregavel-armario.webp',
+    link: 'https://meli.la/2Yv7ABH', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_690774-MLB103079448137_122025-F-luminaria-barra-led-sensor-movimento-recarregavel-armario.webp',
     preco: 36.99, precoAntigo: 52.85,
     vendedor: 'JOHNNY HOME LIGHTING', reputacao: 'MercadoLíder', nota: '4,7', opinioes: '3.341 opiniões', vendidos: '+10 mil vendidos', frete: 'Full',
     por: 'Barra de luz com sensor de movimento e bateria recarregável, para armários e cantos escuros, sem passar fio.',
@@ -111,7 +111,7 @@ export const products = [
   },
   {
     id: 14, area: 'decoracao', nome: 'Varal de luzes, cordão de 10 m com 20 lâmpadas de filamento LED',
-    link: 'https://meli.la/1JRGMuV', img: 'https://http2.mlstatic.com/D_NQ_NP_687863-MLB93180474797_092025-O-varal-de-luzes-cordao-10-metros-20-lampadas-filamento-led.webp',
+    link: 'https://meli.la/1JRGMuV', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_687863-MLB93180474797_092025-F-varal-de-luzes-cordao-10-metros-20-lampadas-filamento-led.webp',
     preco: 159.24, precoAntigo: 196.89,
     vendedor: 'PopSpot (loja oficial)', reputacao: 'MercadoLíder Gold', nota: '4,9', opinioes: '48 opiniões', vendidos: '+100 vendidos', frete: 'Frete grátis com condição',
     por: 'Dez metros de luz quente para varanda, quarto ou sala. Para pendurar sem furar, dá para combinar com os ganchos ou a fita adesiva da lista.',
@@ -119,7 +119,7 @@ export const products = [
   },
   {
     id: 15, area: 'decoracao', nome: 'Kit 5 quadros decorativos em MDF, frases de fé e gratidão',
-    link: 'https://meli.la/2KF8BT5', img: 'https://http2.mlstatic.com/D_NQ_NP_997958-MLB116132682164_092026-O-kit-5-quadros-decorativos-mdf-frases-fe-gratidao-sala-grande.webp',
+    link: 'https://meli.la/2KF8BT5', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_997958-MLB116132682164_092026-F-kit-5-quadros-decorativos-mdf-frases-fe-gratidao-sala-grande.webp',
     preco: 30.30, precoAntigo: 31.90,
     vendedor: 'Galeria 89', reputacao: 'MercadoLíder', nota: '4,7', opinioes: '597 opiniões', vendidos: '+1.000 vendidos', frete: 'Full',
     por: 'Cinco quadros para compor uma parede de uma vez.',
@@ -127,7 +127,7 @@ export const products = [
   },
   {
     id: 16, area: 'decoracao', nome: 'Fita dupla face 3M para colar quadro, 24 mm x 3 m (sem furar)',
-    link: 'https://meli.la/2XWkXfQ', img: 'https://http2.mlstatic.com/D_NQ_NP_823425-MLA100082611587_122025-O.webp',
+    link: 'https://meli.la/2XWkXfQ', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_823425-MLA100082611587_122025-F.webp',
     preco: 26.56, precoAntigo: 37.99,
     vendedor: 'JRO Top Soluções (loja oficial)', reputacao: 'MercadoLíder Platinum', nota: '4,8', opinioes: '2.665 opiniões', vendidos: '+10 mil vendidos', frete: 'Full',
     por: 'Cola quadros e objetos leves sem furar a parede.',
@@ -135,7 +135,7 @@ export const products = [
   },
   {
     id: 17, area: 'decoracao', nome: 'Papel de parede adesivo tijolinho, rolo de 5 m',
-    link: 'https://meli.la/2J5QLAU', img: 'https://http2.mlstatic.com/D_NQ_NP_737274-MLB117265328920_102026-O-papel-de-parede-tijolo-tijolinho-para-sala-quarto-rolo-5m.webp',
+    link: 'https://meli.la/2J5QLAU', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_737274-MLB117265328920_102026-F-papel-de-parede-tijolo-tijolinho-para-sala-quarto-rolo-5m.webp',
     preco: 39.90, precoAntigo: null,
     vendedor: 'BAZAR MIX', reputacao: 'MercadoLíder', nota: '4,7', opinioes: '1.227 opiniões', vendidos: '+10 mil vendidos', frete: 'Full',
     por: 'Muda o visual de uma parede sem obra.',
@@ -143,7 +143,7 @@ export const products = [
   },
   {
     id: 18, area: 'decoracao', nome: 'Tapete antiderrapante para sala ou quarto, 2,00 x 1,40 m',
-    link: 'https://meli.la/1AQrzCX', img: 'https://http2.mlstatic.com/D_NQ_NP_949607-MLB115302780010_082026-O-tapete-antiderrapante-sala-quarto-200x140-desenho-tecido.webp',
+    link: 'https://meli.la/1AQrzCX', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_949607-MLB115302780010_082026-F-tapete-antiderrapante-sala-quarto-200x140-desenho-tecido.webp',
     preco: 72.70, precoAntigo: 78.90,
     vendedor: 'CASAKAZI', reputacao: 'MercadoLíder', nota: '4,8', opinioes: '1.442 opiniões', vendidos: '+10 mil vendidos', frete: 'Full',
     por: 'Define o espaço da sala ou do quarto e é antiderrapante, segundo o título.',
@@ -151,7 +151,7 @@ export const products = [
   },
   {
     id: 19, area: 'decoracao', nome: 'Cortina blackout 2,00 x 1,80 m, tecido grosso, cor gelo',
-    link: 'https://meli.la/1A91enc', img: 'https://http2.mlstatic.com/D_NQ_NP_894305-MLA99953148985_112025-O.webp',
+    link: 'https://meli.la/1A91enc', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_894305-MLA99953148985_112025-F.webp',
     preco: 46.90, precoAntigo: 78.90,
     vendedor: 'Mageal (loja oficial)', reputacao: 'MercadoLíder Platinum', nota: '4,7', opinioes: '127.285 opiniões', vendidos: '+10 mil vendidos', frete: 'Full',
     por: 'Cortina blackout que corta a luz, na cor gelo, que combina com ambientes claros. É a mais avaliada de toda a lista.',
@@ -159,7 +159,7 @@ export const products = [
   },
   {
     id: 20, area: 'decoracao', nome: 'Varão extensível de 1,40 a 2,60 m, sem furos',
-    link: 'https://meli.la/316z3nJ', img: 'https://http2.mlstatic.com/D_NQ_NP_755983-MLA111652841497_052026-O.webp',
+    link: 'https://meli.la/316z3nJ', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_755983-MLA111652841497_052026-F.webp',
     preco: 36.99, precoAntigo: 45.90,
     vendedor: 'CAIJU ONLINE', reputacao: 'MercadoLíder', nota: '4,7', opinioes: '2.144 opiniões', vendidos: '+10 mil vendidos', frete: 'Full',
     por: 'Varão ajustável que dispensa furar a parede, para pendurar cortina.',
