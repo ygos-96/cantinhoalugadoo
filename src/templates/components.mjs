@@ -46,6 +46,8 @@ export const imgTagFor = (p, cls = '', eager = false) => `<img src="${esc(p.img)
 
 export const buyBtn = (p, cls = '') => `<a class="btn !px-3 ${cls}" href="${esc(p.link)}" target="_blank" rel="sponsored nofollow noopener">Ver no Mercado Livre ${icon.arrowUpRight('hidden h-4 w-4 sm:block')}<span class="sr-only"> (abre em nova aba)</span></a>`;
 
+export const adNote = (cls = '') => `<p class="text-[11px] leading-tight text-muted ${cls}">Publicidade: link de afiliado.</p>`;
+
 const precoLine = (p) => (cfg.showPrices
   ? `<p class="leading-tight"><strong class="text-base font-semibold text-ink sm:text-lg">${brl(p.preco)}</strong>${p.precoAntigo ? ` <span class="text-xs text-muted line-through sm:text-sm">${brl(p.precoAntigo)}</span>` : ''}<span class="block text-xs text-muted">em ${esc(cfg.dataConsultada.slice(0, 5))} · pode variar</span></p>`
   : '');
@@ -62,7 +64,7 @@ export function productCard(p, grupo = '') {
     <h3 class="line-clamp-2 min-h-[2.5rem] font-sans text-sm font-semibold leading-snug sm:text-[15px]">${esc(p.nome)}</h3>
     ${stars(p, true, 'text-xs sm:text-sm')}
     ${precoLine(p)}
-    <div class="mt-auto pt-2">${buyBtn(p, 'w-full')}</div>
+    <div class="mt-auto pt-2">${buyBtn(p, 'w-full')}${adNote('mt-1.5 text-center')}</div>
   </div>
 </article>`;
 }
@@ -84,7 +86,7 @@ export function productRow(p, n) {
     </div>
     <div class="mt-5 flex flex-col gap-4 border-t border-line pt-4 sm:flex-row sm:items-center sm:justify-between">
       <p class="text-[13px] leading-snug text-muted">${esc(p.vendedor)} · ${esc(p.reputacao)}<br>${esc(p.frete)}</p>
-      <div class="flex flex-wrap items-center gap-4">${precoLine(p)}${buyBtn(p)}</div>
+      <div class="flex flex-wrap items-center gap-4">${precoLine(p)}<div>${buyBtn(p)}${adNote('mt-1.5 text-center')}</div></div>
     </div>
   </div>
 </article>`;

@@ -13,12 +13,12 @@ const OUT = resolve(ROOT, 'site-src');
 const PUB = resolve(ROOT, 'public');
 
 const pages = []; // { path, html }
-const add = (path, html) => pages.push({ path, html });
+const add = (path, html, noSitemap = false) => pages.push({ path, html, noSitemap });
 
 add('/', home());
 for (const key of Object.keys(areas)) add(`/${areas[key].slug}/`, area(key));
 for (const g of guides) add(`/guias/${g.slug}/`, guide(g));
-for (const t of topics) add(`/${t.slug}/`, topic(t));
+for (const t of topics) add(`/${t.slug}/`, topic(t), !!t.oculto);
 
 add('/como-funciona/', doc({
   title: 'Como funciona',
@@ -98,7 +98,7 @@ cpSync(resolve(ROOT, 'src/client'), OUT, { recursive: true });
 mkdirSync(PUB, { recursive: true });
 writeFileSync(resolve(PUB, 'robots.txt'), `User-agent: *\nAllow: /\n${cfg.siteUrl ? `Sitemap: ${url('/sitemap.xml')}\n` : ''}`);
 if (cfg.siteUrl) {
-  const urls = pages.map((p) => `  <url><loc>${esc(url(p.path))}</loc></url>`).join('\n');
+  const urls = pages.filter((p) => !p.noSitemap).map((p) => `  <url><loc>${esc(url(p.path))}</loc></url>`).join('\n');
   writeFileSync(resolve(PUB, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);
 } else {
   console.warn('[aviso] SITE_URL não definido: sem sitemap.xml e sem canonical. Defina antes de publicar.');

@@ -2,7 +2,7 @@ import cfg from '../../site.config.mjs';
 import { products, byId } from '../data/products.mjs';
 import { areas, guides, guideBySlug } from '../data/guides.mjs';
 import {
-  esc, num, icon, stars, buyBtn, imgTagFor, productCard, productRow, guideCard, readingMinutes, aviso, soldNum, itemListLd, articleLd,
+  esc, num, icon, stars, buyBtn, adNote, imgTagFor, productCard, productRow, guideCard, readingMinutes, aviso, soldNum, itemListLd, articleLd,
 } from './components.mjs';
 import { layout } from './layout.mjs';
 import { topics } from '../data/topics.mjs';
@@ -18,7 +18,6 @@ export function home() {
     ['Tapetes', '/tapetes-sala-pequena/', 18],
     ['Cortinas', '/cortinas-apartamento-alugado/', 19],
     ['Paredes', '/paredes-sem-obra/', 17],
-    ['Quadros', '/quadros-sem-furar-parede/', 16],
     ['Achadinhos', '/achadinhos/', 10],
   ];
   const vendidosTop = [...products]
@@ -148,6 +147,7 @@ export function guide(g) {
           ${buyBtn(p, 'btn-sm hidden shrink-0 sm:inline-flex')}
         </li>`; }).join('\n        ')}
       </ol>
+      ${adNote('mt-2 hidden sm:block')}
     </section>
 
     <section id="como-escolher" class="mt-14">
@@ -209,7 +209,7 @@ export function doc({ title, description, path, lead, blocks }) {
 export function topic(t) {
   let n = 0;
   const rel = (t.guias || []).map(guideBySlug).filter(Boolean);
-  const outros = topics.filter((o) => o.slug !== t.slug);
+  const outros = topics.filter((o) => o.slug !== t.slug && !o.oculto);
   const body = `
 <section class="noise border-b border-line">
   <div class="wrap py-12 sm:py-16">

@@ -30,7 +30,7 @@ Cozinha pequena
 2. Como organizar armários de cozinha pequena sem reforma
 
 Decoração de apartamento alugado
-3. Decoração de apartamento alugado sem furar a parede: 10 ideias
+3. Decoração de apartamento alugado sem furar a parede: 9 ideias
 4. Iluminação para apartamento alugado: luminárias que não pedem obra
 
 Fila seguinte: tapetes para sala pequena (como escolher o tamanho), cortinas para apartamento alugado, quadros sem furar a parede.

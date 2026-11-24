@@ -53,7 +53,7 @@ export function layout({ title, description, path, body, progress = false, ogTyp
 </head>
 <body>
   <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-white">Pular para o conteúdo</a>
-  <div class="bg-olive-900 px-4 py-2 text-center text-xs leading-snug text-olive-100">Curadoria de achadinhos selecionados por avaliações · Links de afiliado do Mercado Livre</div>
+  <div class="bg-olive-900 px-4 py-2 text-center text-xs leading-snug text-olive-100">Curadoria de achadinhos selecionados por avaliações · Links de afiliado do Mercado Livre · Publicidade: link de afiliado.</div>
   <header data-header class="sticky top-0 z-40 border-b border-line bg-paper transition-shadow duration-300">
     <div class="wrap flex h-16 items-center justify-between gap-6">
       <a href="/" class="flex items-center gap-2.5 no-underline">${logoMark('h-10 w-10')}<span class="font-display text-xl font-semibold tracking-tight">${esc(cfg.name)}</span></a>
@@ -92,7 +92,6 @@ ${body}
         <p class="text-xs font-semibold uppercase tracking-[.14em] text-olive-200">Categorias</p>
         <ul class="mt-4 space-y-2.5 text-sm">
           ${categorias.map(([t, h]) => `<li><a class="text-white/90 no-underline hover:underline" href="${h}">${t}</a></li>`).join('\n          ')}
-          <li><a class="text-white/90 no-underline hover:underline" href="/quadros-sem-furar-parede/">Quadros</a></li>
         </ul>
       </div>
       <div>

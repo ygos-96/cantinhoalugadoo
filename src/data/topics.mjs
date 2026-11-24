@@ -38,14 +38,15 @@ export const topics = [
   },
   {
     slug: 'quadros-sem-furar-parede',
+    oculto: true, // fora da home, do menu e dos "Outros temas" até repor quadros
     titulo: 'Quadros',
     h1: 'Quadros sem furar a parede: o que usar para fixar',
-    descricao: 'Kit de quadros e fita dupla face para pendurar sem furar a parede do apartamento alugado.',
+    descricao: 'Fita dupla face 3M para pendurar quadros sem furar a parede do apartamento alugado.',
     intro: [
       'Parede vazia é o que mais deixa a casa com cara de provisória, e furar nem sempre é opção. A saída é combinar quadros leves com uma fita adesiva própria para isso.',
-      'Aqui estão um kit de quadros em MDF e uma fita dupla face para colar quadro, ambos com os dados conferidos em ' + '17/11/2026.',
+      'Aqui está uma fita dupla face para colar quadro, com os dados conferidos em 24/11/2026.',
     ],
-    ids: [15, 16],
+    ids: [16],
     dicas: [
       'Veja o peso máximo que a fita suporta e some o peso do quadro com a moldura.',
       'Teste a fita num ponto escondido: dependendo da tinta, a remoção pode levar parte dela.',

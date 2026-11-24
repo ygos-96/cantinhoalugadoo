@@ -19,5 +19,5 @@ export default {
   showPrices: true,
 
   // Data em que os dados dos produtos foram conferidos no Mercado Livre.
-  dataConsultada: '17/11/2026',
+  dataConsultada: '24/11/2026',
 };

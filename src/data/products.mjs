@@ -1,4 +1,4 @@
-// Produtos escolhidos pelo Ygor (planilha "produtos ML", conferida em 17/11/2026).
+// Produtos escolhidos pelo Ygor (planilha "produtos ML", conferida em 24/11/2026).
 // A coluna de comissão da planilha NÃO é copiada para cá de propósito (não aparece no site).
 // `por`  = por que entrou na lista (só o que o título/anúncio permite afirmar).
 // `confira` = o que o leitor deve checar no anúncio antes de comprar.
@@ -80,7 +80,7 @@ export const products = [
   {
     id: 10, area: 'cozinha', nome: 'Organizador de tampas Arthi, aço cromado',
     link: 'https://meli.la/2JLGovg', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_707172-MLA95203328508_102025-F.webp',
-    preco: 32.29, precoAntigo: 45.90,
+    preco: 36.16, precoAntigo: 45.90,
     vendedor: 'Arthi (loja oficial)', reputacao: 'MercadoLíder Platinum', nota: '4,9', opinioes: '1.731 opiniões', vendidos: '+10 mil vendidos', frete: 'Frete grátis / Full',
     por: 'Suporte para guardar tampas de panela em pé, em vez de empilhadas e escorregando.',
     confira: 'Veja no anúncio como ele é instalado ou apoiado e se cabe no seu armário ou gaveta.',
@@ -118,14 +118,6 @@ export const products = [
     confira: 'Tem poucas opiniões (48) e o frete grátis tem condição. Confira a tomada, a voltagem e o peso do cordão antes de escolher o adesivo.',
   },
   {
-    id: 15, area: 'decoracao', nome: 'Kit 5 quadros decorativos em MDF, frases de fé e gratidão',
-    link: 'https://meli.la/2KF8BT5', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_997958-MLB116132682164_092026-F-kit-5-quadros-decorativos-mdf-frases-fe-gratidao-sala-grande.webp',
-    preco: 30.30, precoAntigo: 31.90,
-    vendedor: 'Galeria 89', reputacao: 'MercadoLíder', nota: '4,7', opinioes: '597 opiniões', vendidos: '+1.000 vendidos', frete: 'Full',
-    por: 'Cinco quadros para compor uma parede de uma vez.',
-    confira: 'O tema é religioso (frases de fé e gratidão); veja se combina com a sua casa. Para não furar, combine com a fita dupla face da lista.',
-  },
-  {
     id: 16, area: 'decoracao', nome: 'Fita dupla face 3M para colar quadro, 24 mm x 3 m (sem furar)',
     link: 'https://meli.la/2XWkXfQ', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_823425-MLA100082611587_122025-F.webp',
     preco: 26.56, precoAntigo: 37.99,
@@ -136,7 +128,7 @@ export const products = [
   {
     id: 17, area: 'decoracao', nome: 'Papel de parede adesivo tijolinho, rolo de 5 m',
     link: 'https://meli.la/2J5QLAU', img: 'https://http2.mlstatic.com/D_NQ_NP_2X_737274-MLB117265328920_102026-F-papel-de-parede-tijolo-tijolinho-para-sala-quarto-rolo-5m.webp',
-    preco: 39.90, precoAntigo: null,
+    preco: 35.90, precoAntigo: null,
     vendedor: 'BAZAR MIX', reputacao: 'MercadoLíder', nota: '4,7', opinioes: '1.227 opiniões', vendidos: '+10 mil vendidos', frete: 'Full',
     por: 'Muda o visual de uma parede sem obra.',
     confira: 'É adesivo: veja no anúncio se é removível e como a sua parede (tinta, textura) reage. Em imóvel alugado, veja o que o contrato diz sobre alterações.',

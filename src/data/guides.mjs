@@ -19,9 +19,9 @@ export const areas = {
     titulo: 'Decoração de apartamento alugado',
     descricao: 'Decoração para apartamento alugado: paredes, janelas, tapete e luz que não pedem obra nem furo na parede.',
     intro: 'Decoração de apartamento alugado sem obra: em apartamento alugado, quase tudo que muda o visual precisa ser reversível. Aqui estão guias e produtos que dispensam obra e, na maioria dos casos, furo na parede.',
-    produtoIds: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    produtoIds: [11, 12, 13, 14, 16, 17, 18, 19, 20],
     grupos: [
-      { titulo: 'Paredes', ids: [15, 16, 17] },
+      { titulo: 'Paredes', ids: [16, 17] },
       { titulo: 'Janela', ids: [19, 20] },
       { titulo: 'Chão', ids: [18] },
       { titulo: 'Luz', ids: [11, 12, 13, 14] },
@@ -94,11 +94,11 @@ export const guides = [
     slug: 'decoracao-apartamento-alugado-sem-furar-parede',
     capa: 19,
     area: 'decoracao',
-    titulo: 'Decoração de apartamento alugado sem furar a parede: 10 ideias',
-    descricao: 'Dez ideias de decoração para apartamento alugado que dispensam obra e, na maioria, furo na parede: quadros, cortina, tapete e luz.',
+    titulo: 'Decoração de apartamento alugado sem furar a parede: 9 ideias',
+    descricao: 'Nove ideias de decoração para apartamento alugado que dispensam obra e, na maioria, furo na parede: quadros, cortina, tapete e luz.',
     intro: [
       'Em apartamento alugado, a regra é mudar o visual sem deixar marca. Dá para fazer bastante com fita adesiva, varão sem furo, tapete e luz que só precisa de tomada.',
-      'As dez ideias abaixo estão separadas por parte da casa. Elas foram escolhidas pelo tipo de produto e pelo histórico de avaliações dos vendedores, e não por teste nosso. Em todas, o cuidado principal é o mesmo: ler o anúncio e testar o adesivo num ponto escondido.',
+      'As nove ideias abaixo estão separadas por parte da casa. Elas foram escolhidas pelo tipo de produto e pelo histórico de avaliações dos vendedores, e não por teste nosso. Em todas, o cuidado principal é o mesmo: ler o anúncio e testar o adesivo num ponto escondido.',
     ],
     criterios: [
       'Tudo precisa ser reversível: adesivo removível, varão de pressão, objeto de apoio.',
@@ -107,7 +107,7 @@ export const guides = [
       'Meça a parede, a janela e o cômodo antes de comprar.',
     ],
     sections: [
-      { titulo: 'Paredes', texto: 'Mudar a parede sem obra: quadros, fita e papel adesivo.', ids: [15, 16, 17] },
+      { titulo: 'Paredes', texto: 'Mudar a parede sem obra: fita para quadro e papel adesivo.', ids: [16, 17] },
       { titulo: 'Janela', texto: 'Cortina e varão sem furar a parede.', ids: [20, 19] },
       { titulo: 'Chão', texto: 'Um tapete define a sala ou o quarto.', ids: [18] },
       { titulo: 'Luz', texto: 'Luz de tomada ou de bateria, sem instalação.', ids: [11, 12, 13, 14] },
