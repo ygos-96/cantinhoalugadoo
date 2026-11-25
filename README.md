@@ -22,7 +22,6 @@ npm run preview    # serve o dist/ localmente
 | Montagem das páginas e robots/sitemap/404 | `scripts/generate.mjs` |
 | Visual: cores, fontes, sombras | `tailwind.config.js` e `src/client/style.css` |
 | Interações (menu, filtro, sumário, revelar ao rolar) | `src/client/modules/*.js` |
-| Mapa e pendências | `docs/mapa-do-site.md` |
 
 `site-src/` e `dist/` são gerados: não edite.
 
